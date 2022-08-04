@@ -18,7 +18,7 @@ var root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     //Wrapping component in strictMode gives an error detection scheme over the components.
     <React.StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Navbar />
             <Routes>
                 <Route exact path="/" element={<TodoContainer />}/>
