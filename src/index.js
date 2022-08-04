@@ -1,17 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react"
+import ReactDOM  from "react-dom/client"
+// Component file
+import TodoContainer from "./functionBased/components/TodoContainer";
+import About from "./functionBased/pages/About"
+import NotMatch from "./functionBased/pages/NotMatch"
+import Navbar from "./functionBased/components/Navbar";
+//Stylesheet
+import "./functionBased/App.css"
+//React router dom
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
+var root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    //Wrapping component in strictMode gives an error detection scheme over the components.
+    <React.StrictMode>
+        <BrowserRouter>
+            <Navbar />
+            <Routes>
+                <Route exact path="/" element={<TodoContainer />}/>
+                <Route path="/about/*" element={<About/>}/>
+                <Route path="*" element={<NotMatch/>}/>
+            </Routes>
+        </BrowserRouter>
+    </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
