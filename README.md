@@ -2,6 +2,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visit the link: https://hed20.github.io/react-todo-project to view the application.
 
 ## Available Scripts
 
