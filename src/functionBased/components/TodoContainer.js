@@ -61,7 +61,6 @@ const TodoContainer = () => {
     
    //get data from localstorage
     useEffect (() => {
-        console.log("test")
         const temp = localStorage.getItem("todos")
         const loadedTodos = JSON.parse(temp)
 

@@ -8,7 +8,7 @@ import Navbar from "./functionBased/components/Navbar";
 //Stylesheet
 import "./functionBased/App.css"
 //React router dom
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 
 
@@ -18,13 +18,13 @@ var root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     //Wrapping component in strictMode gives an error detection scheme over the components.
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <Navbar />
             <Routes>
                 <Route exact path="/" element={<TodoContainer />}/>
                 <Route path="/about/*" element={<About/>}/>
                 <Route path="*" element={<NotMatch/>}/>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 );
